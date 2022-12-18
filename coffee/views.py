@@ -10,7 +10,7 @@ from .permissions import IsOwnerOrReadOnly
 class CoffeeListView(ListCreateAPIView):
     queryset=Coffee.objects.all()
     serializer_class=CoffeeSerializers
-    permission_classes=[IsOwnerOrReadOnly]
+    permission_classes=[IsAuthenticatedOrReadOnly]
 
 class CoffeeDetailView(RetrieveUpdateDestroyAPIView):
     queryset=Coffee.objects.all()
